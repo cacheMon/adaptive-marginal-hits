@@ -6,7 +6,7 @@ The configuration consists of two main parts:
 Used to configure the cache instance.
 
 ### Basic Configuration
-- **cacheSizeMB**: Total cache size. Note that some memory will be reserved for slab metadata. For example, if slab size is 4MB and you configure cache size as 8MB, there will only be 1 slab, as a small amount will be reserved for slab metadata. The amount of metadata overhead is related to the number of slabs. Detailed logic can be referenced [here](https://github.com/eth-easl/slab-rebalance-bench/blob/59e5160dc3fb9031722cedddebf0a072110f9388/exp/prepare_exp_configs/gen_demo_config.py#L137).
+- **cacheSizeMB**: Total cache size. Note that some memory will be reserved for slab metadata. For example, if slab size is 4MB and you configure cache size as 8MB, there will only be 1 slab, as a small amount will be reserved for slab metadata. The amount of metadata overhead is related to the number of slabs. Detailed logic can be referenced [here](https://github.com/cacheMon/adaptive-marginal-hits/blob/59e5160dc3fb9031722cedddebf0a072110f9388/exp/prepare_exp_configs/gen_demo_config.py#L137).
 
 - **moveOnSlabRelease**: Whether to enable move on slab releases. See [here](https://cachelib.org/docs/Cache_Library_Architecture_Guide/slab_rebalancing#3-how-do-we-maintain-strict-lru-ordering) for a detailed explanation. We haven't enabled this so far.
 
@@ -30,7 +30,7 @@ Used to configure the cache stressor.
 
 ### Generator Configuration
 - **generator**: Which generator to generate workloads. There are some other workload generators in cachebench, but we only use `"oracle-general-replay"`.
-- **useTraceTimer**: If true, use trace time instead of wall clock time. When enabling this, remember to pass the environment variable: `MOCK_TIMER_LIB_PATH="libmock_time.so" ./bin/cachebench`
+- **useTraceTimer**: If true, use trace time instead of wall clock time. When enabling this, remember to pass the environment variable: `MOCK_TIMER_LIB_PATH="libmock_time.so" ./bin/cachebench` and also `LD_PRELOAD`.
 
 ### Thread and Request Configuration
 - **numThreads**: Number of concurrent threads (we've been using 1)

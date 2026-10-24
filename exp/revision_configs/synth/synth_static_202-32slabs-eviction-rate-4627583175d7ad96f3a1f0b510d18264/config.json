@@ -1,0 +1,45 @@
+{
+  "cache_config": {
+    "moveOnSlabRelease": false,
+    "lruRefreshSec": 0,
+    "poolResizeIntervalSec": 0,
+    "poolRebalanceIntervalSec": 1,
+    "allocSizes": [
+      256,
+      512,
+      1024,
+      2048,
+      4096
+    ],
+    "maxAllocSize": 4194304,
+    "wakeUpRebalancerEveryXReqs": 50000,
+    "lru2qHotPct": 100,
+    "lru2qColdPct": 0,
+    "allocator": "SIMPLE2Q",
+    "rebalanceOnRecordAccess": true,
+    "enableTailHitsTracking": true,
+    "cacheSizeMB": 132,
+    "rebalanceStrategy": "eviction-rate",
+    "rebalanceDiffRatio": 0.1,
+    "syncRebalance": true
+  },
+  "test_config": {
+    "generator": "oracle-general-replay",
+    "replayGeneratorConfig": {
+      "ampFactor": 1
+    },
+    "useTraceTimer": true,
+    "repeatTraceReplay": false,
+    "repeatOpCount": true,
+    "onlySetIfMiss": false,
+    "enableLookaside": true,
+    "timestampFactor": 1,
+    "numThreads": 1,
+    "ignoreLargeReq": true,
+    "prepopulateCache": true,
+    "zstdTrace": true,
+    "compressed": false,
+    "traceFileName": "synth_static_202.oracleGeneral.bin",
+    "numOps": 80000000
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "trace": "synth_static_202",
+  "slabs": 256,
+  "strategy": "marginal-hits-old",
+  "strategy_label": "Marginal-Hits",
+  "slab_size_mb": 4,
+  "cache_size_mb": 1028,
+  "slab_size": 4
+}

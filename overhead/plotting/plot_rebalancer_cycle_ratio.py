@@ -54,7 +54,7 @@ def plot_overhead_analysis(csv_path, output_dir='.'):
             continue
         
         # Create figure
-        fig, ax = plt.subplots(figsize=(14, 8))
+        fig, ax = plt.subplots(figsize=(14, 9))
         
         # Calculate statistics for each allocator-strategy combination
         stats_data = []
@@ -126,7 +126,7 @@ def plot_overhead_analysis(csv_path, output_dir='.'):
         
         # Customize the plot
         ax.set_xlabel('Eviction Policy')
-        ax.set_ylabel('Rebalancing CPU Cycles\n(% of Request-Serving Cycles)')
+        ax.set_ylabel('CPU Cycles (%)')
         ax.set_xticks(x_positions)
         ax.set_xticklabels(allocator_labels)
         
@@ -138,10 +138,6 @@ def plot_overhead_analysis(csv_path, output_dir='.'):
         # Add grid
         ax.grid(True, alpha=0.3, axis='y')
         ax.set_axisbelow(True)
-        
-        # Position legend at the top
-        ax.legend(bbox_to_anchor=(0.5, 1.02), loc='lower center', ncol=3, frameon=True, shadow=True, 
-                              framealpha=0.9, edgecolor='black')
         
         # Format y-axis as percentage
         ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'{y*100:.1f}'))

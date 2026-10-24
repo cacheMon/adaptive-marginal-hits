@@ -29,6 +29,8 @@ def create_twitter_prod_boxplots(csv_file, output_dir=None, need_all_strategy=Fa
     
     # Set up matplotlib for publication quality
     plt.rcParams.update(rcParams)
+    plt.rcParams.update({'axes.labelsize': 40, 'xtick.labelsize': 40,
+                         'ytick.labelsize': 30})
     
     # Create plots for both WSR values
     wsr_values = [0.1, 0.01]
@@ -82,7 +84,7 @@ def create_twitter_prod_boxplots(csv_file, output_dir=None, need_all_strategy=Fa
             continue
         
         # Create figure - slightly narrower and taller for better proportions
-        fig, ax = plt.subplots(figsize=(14, 8))
+        fig, ax = plt.subplots(figsize=(14,9.5))
         
         # Prepare data for box plots
         box_data = []
@@ -187,10 +189,11 @@ def create_twitter_prod_boxplots(csv_file, output_dir=None, need_all_strategy=Fa
         # Set x-axis ticks and labels
         ax.set_xticks(allocator_positions)
         ax.set_xticklabels(allocator_display_labels)
+        ax.set_yscale('log')
         
         # Customize the plot
         ax.set_xlabel('Eviction Policy')
-        ax.set_ylabel('Number of Rebalanced Slabs')
+        ax.set_ylabel('# of Rebalanced Slabs')
         ax.grid(True, alpha=0.3, axis='y')
         
         # Create legend with matching saturation (alpha=1)
@@ -206,14 +209,6 @@ def create_twitter_prod_boxplots(csv_file, output_dir=None, need_all_strategy=Fa
                                      alpha=1, edgecolor='black',  # Match box alpha
                                      label=strategy_labels[strategy]))
         
-        if legend_elements:
-            # Create legend with 2 rows, 3 columns outside the plot area at the top
-            legend = ax.legend(handles=legend_elements, 
-                              bbox_to_anchor=(0.5, 1.15), loc='center',
-                              ncol=3, frameon=True, fancybox=True, shadow=True, 
-                              framealpha=0.9, edgecolor='black')
-            legend.get_frame().set_facecolor('white')
-        
         # Style the plot
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
@@ -222,7 +217,6 @@ def create_twitter_prod_boxplots(csv_file, output_dir=None, need_all_strategy=Fa
         
         # Adjust layout to accommodate legend outside plot area
         plt.tight_layout()
-        plt.subplots_adjust(top=0.85)  # Make room for legend at top
         
         # Save to PDF in the specified output directory
         output_file = os.path.join(output_dir, f'twitter_prod_rebalanced_slabs_boxplot_wsr_{wsr:.2f}.pdf')

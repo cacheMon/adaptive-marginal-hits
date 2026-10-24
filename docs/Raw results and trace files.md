@@ -4,7 +4,7 @@
 ## Raw Results
 
 ### Miss Ratio Results
-The raw miss ratio results for [efficiency_result_processed.csv](https://github.com/eth-easl/slab-rebalance-bench/blob/main/exp/result/efficiency_result_processed.csv) are available at:
+The raw miss ratio results for [efficiency_result_processed.csv](https://github.com/cacheMon/adaptive-marginal-hits/blob/main/exp/result/efficiency_result_processed.csv) are available at:
 
 [Google Drive - Raw Results](https://drive.google.com/drive/folders/1AHaZh6hOjy2IF813JpV9w2h3gIKV4QCZ?usp=drive_link)
 

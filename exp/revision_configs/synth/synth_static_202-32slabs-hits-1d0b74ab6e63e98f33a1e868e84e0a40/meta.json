@@ -1,0 +1,9 @@
+{
+  "trace": "synth_static_202",
+  "slabs": 32,
+  "strategy": "hits",
+  "strategy_label": "Hits-Per-Slab",
+  "slab_size_mb": 4,
+  "cache_size_mb": 132,
+  "slab_size": 4
+}

@@ -114,7 +114,9 @@ Configure this if you want to see fewer progress updates:
 Another tricky thing is timer. If you want to use the trace time instead of the wall clock time, we need to load a shared library, and in the JSON config file set `useTraceTime` to true (another doc will explain the config file in details):
 
 ```bash
-MOCK_TIMER_LIB_PATH="libmock_time.so" ./bin/cachebench --json_test_config test.json
+LD_PRELOAD=/abs/path/libmock_time.so \
+MOCK_TIMER_LIB_PATH=/abs/path/libmock_time.so \
+./bin/cachebench --json_test_config test.json
 ```
 
 The `libmock_time.so` library can be compiled from `set_up_env/hook_time/libmock_time.cpp`:
@@ -145,7 +147,9 @@ Copy the `config.json` file from this directory to your machine. Make sure to up
 
 Execute CacheBench with the trace replay:
 ```bash
-MOCK_TIMER_LIB_PATH="libmock_time.so" opt/cachelib/bin/cachebench --json_test_config config.json --progress=100000
+LD_PRELOAD=/abs/path/libmock_time.so \
+MOCK_TIMER_LIB_PATH=/abs/path/libmock_time.so \
+opt/cachelib/bin/cachebench --json_test_config config.json --progress=100000
 ```
 
 **Note:** Make sure to replace the paths with the correct locations of your `libmock_time.so` library and `config.json` file. 

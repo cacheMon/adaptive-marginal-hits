@@ -36,6 +36,9 @@ def plot_miss_ratio(trace_name, data_path, output_dir="."):
     
     # Set up matplotlib for publication quality
     plt.rcParams.update(rcParams)
+    plt.rcParams.update({'axes.labelsize': 45,
+                         'xtick.labelsize': 40,
+                         'ytick.labelsize': 35})
     
     # Calculate global y-axis range for miss_ratio across all allocators
     all_miss_ratios = []
@@ -56,7 +59,7 @@ def plot_miss_ratio(trace_name, data_path, output_dir="."):
     
     # Create three separate figures
     for i, (allocator, allocator_label) in enumerate(zip(allocator_order, allocator_labels)):
-        fig, ax = plt.subplots(figsize=(12, 8))
+        fig, ax = plt.subplots(figsize=(14.7, 7.4))
         
         # Filter data for this allocator
         allocator_data = df_filtered[df_filtered['allocator'] == allocator]
@@ -80,7 +83,7 @@ def plot_miss_ratio(trace_name, data_path, output_dir="."):
             strategy_data = strategy_data.sort_values('wsr_percent')
             
             # Get styling
-            color = strategy_colors.get(strategy, '#000000')
+            color = strategy_colors_muted.get(strategy, '#000000')
             label = strategy_labels.get(strategy, strategy)
             linestyle = strategy_linestyles.get(strategy, '-')
             marker = strategy_markers.get(strategy, 'o')
@@ -92,8 +95,8 @@ def plot_miss_ratio(trace_name, data_path, output_dir="."):
                    label=label,
                    linestyle=linestyle,
                    marker=marker,
-                   markersize=12,
-                   linewidth=2.5,
+                   markersize=25,
+                   linewidth=5,
                    markerfacecolor=color,
                    markeredgecolor='white',
                    markeredgewidth=1)
@@ -102,7 +105,6 @@ def plot_miss_ratio(trace_name, data_path, output_dir="."):
         ax.set_xlabel('Cache Size (% of Working Set)')
         ax.set_ylabel('Miss Ratio')
         ax.grid(True, alpha=0.3)
-        ax.legend(loc='best', frameon=True, fancybox=True, shadow=True)
         
         # Set reasonable axis limits
         ax.set_xlim(left=0)
@@ -110,6 +112,7 @@ def plot_miss_ratio(trace_name, data_path, output_dir="."):
         
         # Set x-axis ticks with step size of 10
         ax.set_xticks(np.arange(0, 50, 10))
+        ax.yaxis.set_major_locator(plt.MultipleLocator(0.025))
         
         # Tight layout
         plt.tight_layout()

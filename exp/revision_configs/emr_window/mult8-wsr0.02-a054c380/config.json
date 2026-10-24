@@ -1,0 +1,51 @@
+{
+  "cache_config": {
+    "moveOnSlabRelease": false,
+    "lruRefreshSec": 0,
+    "poolResizeIntervalSec": 0,
+    "poolRebalanceIntervalSec": 1,
+    "minAllocSize": 72,
+    "allocFactor": 1.25,
+    "syncRebalance": true,
+    "rebalanceStrategy": "marginal-hits-new",
+    "wakeUpRebalancerEveryXReqs": 50000,
+    "mhMovingAverageParam": 0.3,
+    "mhOnlyUpdateHitIfRebalance": true,
+    "minRequestsObserved": 50000,
+    "maxDecayInterval": 50000,
+    "mhMinDiff": 2,
+    "mhMinDiffRatio": 0.0,
+    "emrLow": 0.5,
+    "emrHigh": 0.95,
+    "thresholdAI": true,
+    "thresholdAD": false,
+    "thresholdMI": false,
+    "thresholdMD": true,
+    "lru2qHotPct": 100,
+    "lru2qColdPct": 0,
+    "allocator": "SIMPLE2Q",
+    "rebalanceOnRecordAccess": true,
+    "cacheSizeMB": 1760,
+    "maxAllocSize": 4194304,
+    "emrWindowClassMultiplier": 8.0
+  },
+  "test_config": {
+    "generator": "oracle-general-replay",
+    "replayGeneratorConfig": {
+      "ampFactor": 1
+    },
+    "useTraceTimer": true,
+    "repeatTraceReplay": false,
+    "repeatOpCount": true,
+    "onlySetIfMiss": false,
+    "enableLookaside": true,
+    "timestampFactor": 1,
+    "numThreads": 1,
+    "ignoreLargeReq": true,
+    "prepopulateCache": true,
+    "zstdTrace": true,
+    "compressed": true,
+    "traceFileName": "metaKV/202210_kv_traces_all_sort.csv.oracleGeneral.zst",
+    "numOps": 1482478166
+  }
+}

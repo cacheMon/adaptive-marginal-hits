@@ -1,0 +1,40 @@
+{
+  "cache_config": {
+    "moveOnSlabRelease": false,
+    "lruRefreshSec": 0,
+    "poolResizeIntervalSec": 0,
+    "poolRebalanceIntervalSec": 1,
+    "minAllocSize": 72,
+    "allocFactor": 1.25,
+    "enableTailHitsTracking": true,
+    "syncRebalance": true,
+    "rebalanceStrategy": "marginal-hits-old",
+    "countColdTailHitsOnly": true,
+    "cacheSizeMB": 8548,
+    "maxAllocSize": 4194304,
+    "wakeUpRebalancerEveryXReqs": 50000,
+    "mhMovingAverageParam": 0.3,
+    "allocator": "LRU2Q",
+    "lru2qHotPct": 30,
+    "lru2qColdPct": 30
+  },
+  "test_config": {
+    "generator": "oracle-general-replay",
+    "replayGeneratorConfig": {
+      "ampFactor": 1
+    },
+    "useTraceTimer": true,
+    "repeatTraceReplay": false,
+    "repeatOpCount": true,
+    "onlySetIfMiss": false,
+    "enableLookaside": true,
+    "timestampFactor": 1,
+    "numThreads": 1,
+    "ignoreLargeReq": true,
+    "prepopulateCache": true,
+    "zstdTrace": true,
+    "compressed": true,
+    "traceFileName": "metaKV/202210_kv_traces_all_sort.csv.oracleGeneral.zst",
+    "numOps": 1482478166
+  }
+}

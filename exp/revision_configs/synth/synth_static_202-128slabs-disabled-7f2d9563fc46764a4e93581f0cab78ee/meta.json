@@ -1,0 +1,9 @@
+{
+  "trace": "synth_static_202",
+  "slabs": 128,
+  "strategy": "disabled",
+  "strategy_label": "Disabled",
+  "slab_size_mb": 4,
+  "cache_size_mb": 516,
+  "slab_size": 4
+}

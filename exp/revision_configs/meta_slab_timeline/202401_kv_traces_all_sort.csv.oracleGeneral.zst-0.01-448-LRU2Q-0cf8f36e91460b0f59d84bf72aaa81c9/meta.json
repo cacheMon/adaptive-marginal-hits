@@ -1,0 +1,17 @@
+{
+  "trace_name": "202401_kv_traces_all_sort.csv.oracleGeneral.zst",
+  "uuid": "202401_kv_traces_all_sort.csv.oracleGeneral.zst-0.01-448-LRU2Q-0cf8f36e91460b0f59d84bf72aaa81c9",
+  "trace_file": "metaKV/202401_kv_traces_all_sort.csv.oracleGeneral.zst",
+  "slab_size": 4,
+  "purpose": "efficiency",
+  "wsr": 0.01,
+  "slab_cnt": 110,
+  "wss_mb": 43981.916776657104,
+  "allocator": "LRU2Q",
+  "rebalanceStrategy": "marginal-hits-old",
+  "memory_requirement": 672.0,
+  "cpu_requirement": 2.5,
+  "trace": "202401_kv_traces_all_sort.csv.oracleGeneral.zst",
+  "slabs": 110,
+  "strategy_label": "Marginal-Hits"
+}

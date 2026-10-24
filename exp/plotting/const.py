@@ -9,17 +9,17 @@ strategy_labels = {
     "hits": r"$\mathit{Hits\text{-}Per\text{-}Slab}$",
     "lama": r"$\mathit{LAMA}$",
     "marginal-hits": r"$\mathit{Marginal\text{-}Hits}$",
-    "marginal-hits-tuned": r"$\mathit{Marginal\text{-}Hits\text{-}Tuned}$"
+    "marginal-hits-tuned": r"$\mathit{Adaptive\text{-}Marginal\text{-}Hits}$"
 }
 
 strategy_colors = {
-    "disabled": "#636EFA",
-    "tail-age": "#AB63FA", 
-    "eviction-rate": "#FFA15A",
-    "hits": "#00CC96",
-    "lama": "#8C564B",  
-    "marginal-hits": "#EF553B",
-    "marginal-hits-tuned": "#2E8B57"
+    "disabled": "#B0D5DE",
+    "tail-age": "#FFDB99",
+    "eviction-rate": "#FFBF47",
+    "hits": "#CC8500",
+    "lama": "#FB9489",
+    "marginal-hits": "#11C0FB",
+    "marginal-hits-tuned": "#3DB472"
 }
 
 # Define line styles for variety
@@ -61,18 +61,40 @@ allocator_linestyles = {
     'TINYLFU': '-.'
 }
 
+# strategy_colors: Figs 9-11, strategy_colors_muted: Figs 7-8,
+# strategy_colors_hatched (with strategy_hatches): Figs 1 and 4
+strategy_colors_muted = {
+    "disabled": "#B4B8BF",
+    "tail-age": "#F5C05F",
+    "eviction-rate": "#D49113",
+    "hits": "#754D02",
+    "lama": "#D9756A",
+    "marginal-hits": "#07A6DB",
+    "marginal-hits-tuned": "#297F4F"
+}
+
+strategy_colors_hatched = dict(strategy_colors, disabled="#D0D5DE")
+
+strategy_hatches = {
+    "disabled": "",
+    "tail-age": "/",
+    "eviction-rate": "\\",
+    "hits": "x",
+    "lama": "-",
+    "marginal-hits": "+",
+    "marginal-hits-tuned": "."
+}
+
+# legends are drawn separately by plot_legends.py
 rcParams = {
-    'font.size': 26,           # Increased from 20
-    'axes.titlesize': 30,      # Increased from 24
-    'axes.labelsize': 28,      # Increased from 22
-    'xtick.labelsize': 26,     # Increased from 20
-    'ytick.labelsize': 26,     # Increased from 20
-    'legend.fontsize': 20,     # Increased from 18
-    'figure.titlesize': 28,    # Increased from 26
+    'font.size': 40,
+    'axes.titlesize': 50,
+    'axes.labelsize': 25,
+    'xtick.labelsize': 25,
+    'ytick.labelsize': 25,
+    'legend.fontsize': 20,
+    'figure.titlesize': 40,
     'figure.dpi': 300,
     'savefig.dpi': 300,
     'savefig.bbox': 'tight',
-    'axes.linewidth': 1.2,
-    'grid.linewidth': 0.8,
-    'grid.alpha': 0.3
 }

@@ -85,6 +85,7 @@ def run_cachebench(top_dir, repeat=3):
 
         if config_content["test_config"]["useTraceTimer"]:
             command = [
+                f'LD_PRELOAD="{MOCK_TIMER_PATH}"',
                 f'MOCK_TIMER_LIB_PATH="{MOCK_TIMER_PATH}"',
                 cachelib_path,
                 "--json_test_config", config_file,

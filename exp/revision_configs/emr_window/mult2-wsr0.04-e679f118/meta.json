@@ -1,0 +1,19 @@
+{
+  "trace_name": "meta_202210_kv",
+  "uuid": "meta_202210_kv-0f9a283acaecff519e7c757ae679f118",
+  "wsr": 0.04,
+  "slab_cnt": 877,
+  "slab_size": 4,
+  "cache_size_mb": 3516,
+  "emr_window_class_multiplier": 2.0,
+  "allocator": "LRU",
+  "rebalance_strategy": "marginal-hits-tuned",
+  "monitor_interval": 50000,
+  "number_of_requests": 1482478166,
+  "num_slab_classes": 50,
+  "memory_requirement_mb": 5274.0,
+  "label": "2AC  wsr=0.04",
+  "trace": "meta_202210_kv",
+  "slabs": 877,
+  "strategy_label": "Adaptive-Marginal-Hits"
+}

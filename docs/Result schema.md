@@ -1,6 +1,6 @@
 # Result Schema
 
-The miss ratio benchmarking results are available at: [efficiency_result_processed.csv](https://github.com/eth-easl/slab-rebalance-bench/blob/main/exp/result/efficiency_result_processed.csv)
+The miss ratio benchmarking results are available at: [efficiency_result_processed.csv](https://github.com/cacheMon/adaptive-marginal-hits/blob/main/exp/result/efficiency_result_processed.csv)
 
 ## Configuration Fields
 
